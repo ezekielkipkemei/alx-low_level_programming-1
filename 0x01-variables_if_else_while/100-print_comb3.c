@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - prints out all the numbers between 00 and 99
+ * with no two digit being the same
  * Return: 0
  */
 int main(void)
