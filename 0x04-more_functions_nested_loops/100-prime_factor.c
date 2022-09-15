@@ -18,7 +18,7 @@ int main(void)
 	}
 	for (i = 3; i <= x / 2; i = i + 2)
 	{
-		while (x % 1 == 0)
+		while (x % i == 0)
 		{
 			pf = i;
 			x = x / i;
