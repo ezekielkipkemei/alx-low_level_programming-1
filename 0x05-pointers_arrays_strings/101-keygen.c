@@ -10,7 +10,7 @@ int main(void)
 {
 	int pass, sum;
 
-	srand(time(0));
+	srand(time(1));
 	sum = 0;
 	while (sum <= 2645)
 	{
