@@ -1,25 +1,34 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * *cap_string - this is awesome
- * @s: pointer to a char param
+ * cap_string - capitalizes chars in a string following a separation
  *
- * Return: *s
+ * @c: character string following a separator
+ * Return: char pointer
  */
-
-char *cap_string(char *s)
+char *cap_string(char *c)
 {
-	int i, j;
-	char delimeters[] = " \t\n,;.!?\"(){};
+	int i = 0, j,
+	sep[] = {32, '\t', 11, '\n', 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	for (i = 0; s[i] != '\0'; i++)
+	if (c[0] > 96 && c[0] < 123)
+		c[0] -= 32;
+	while (c[i] != '\0')
 	{
-		if (s[0] >= 97 && s[0] <= 122)
-			s[0] = s[0] -32;
-		for (j = 0; delimeters[j] != '\0'; j++)
-	if (s[i] == delimeters[j] && s[i + 1] >= 97 && s[i + 1] <= 122)
-			s[i + 1] = s[i + 1] - 32;
+		if (c[i] > 96 && c[i] < 123)
+		{
+			j = 0;
+			while (j < 14)
+			{
+				if (c[i - 1] == sep[j])
+				{
+					c[i] -= 32;
+					break;
+				}
+				j++;
+			}
+		}
+		i++;
 	}
-	return (s);
+	return (c);
 }
